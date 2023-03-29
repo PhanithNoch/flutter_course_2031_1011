@@ -1,6 +1,7 @@
 import 'package:blog_app/single_child_example.dart';
 import 'package:flutter/material.dart';
 
+import 'bottomnavigationbar.dart';
 import 'drawer_example.dart';
 import 'home.dart';
 import 'login_screen.dart';
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: DrawerExampleScreen(),
+      home: BottomNavigationbarExample(),
     );
   }
 }
