@@ -1,3 +1,5 @@
+import 'package:blog_app/screens/preview_image.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class LstPhotoScreen extends StatelessWidget {
@@ -8,7 +10,6 @@ class LstPhotoScreen extends StatelessWidget {
     'https://2.bp.blogspot.com/-wBk3_ekGrBQ/VqhBT0H5B_I/AAAAAAAAKHo/vZH-3Y_Jxl4/s1600/CZjDVmmUEAALI_4.jpg',
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMYfn-HCE0ela-64txxdcUz_ShToyvoQhX9w&usqp=CAU',
     'https://cdn.pixabay.com/photo/2020/03/17/12/02/vietnam-4940070_960_720.jpg',
-    null
   ];
 
   @override
@@ -39,6 +40,7 @@ class LstPhotoScreen extends StatelessWidget {
           children: [
             Container(
                 child: GridView.builder(
+                    primary: true,
                     padding: const EdgeInsets.all(20),
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 3,
@@ -47,15 +49,27 @@ class LstPhotoScreen extends StatelessWidget {
                     ),
                     itemCount: _photosOfFriends.length,
                     itemBuilder: (context, index) {
-                      if (_photosOfFriends[index] != null)
-                        return Container(
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: NetworkImage(_photosOfFriends[index]!),
-                              fit: BoxFit.cover,
+                      return GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => PreviewImage(
+                                  imageURL: _photosOfFriends[index]),
                             ),
+                          );
+                        },
+                        child: CachedNetworkImage(
+                          imageUrl: _photosOfFriends[index],
+                          progressIndicatorBuilder:
+                              (context, url, downloadProgress) => Center(
+                            child: CircularProgressIndicator(
+                                value: downloadProgress.progress),
                           ),
-                        );
+                          errorWidget: (context, url, error) =>
+                              Icon(Icons.error),
+                        ),
+                      );
                     })),
             Container(
               child: Center(child: Text('Upload')),

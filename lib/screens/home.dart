@@ -17,7 +17,7 @@ class HomeScreen extends StatelessWidget {
       'image':
           'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzHQv_th9wq3ivQ1CVk7UZRxhbPq64oQrg5Q&usqp=CAU',
       'text':
-          "ListView.custom is a widget that builds its children on demand and separates them with a separator.",
+          "បើយោងតាម នាយកដ្ឋាននគរបាលព្រហ្មទណ្ឌ នៃអគ្គស្នងការដ្ឋាននគរបាលជាតិ ក្រសួងមហាផ្ទៃ បានធ្វើការឃាត់ខ្លួនជនល្មើសមួយរូបដែលបានធ្វើការគម្រា  ម​ កំ ហែង  ក្មេងស្រីអាយុ ១៦ ឆ្នាំ ដោយនឹងបង្ហោះវីដេអូ អា ក្រា  ត កាយជាសាធារណះ។  ករណីគំរាមកំហែងបង្ហោះវីដេអូ និងរូបភាពអា...ស...អា...ភា....ស..ជាសាធារណៈរបស់នារីម្នាក់ ស្រុកស្វាយចេក ខេត្តបន្ទាយមានជ័យ ត្រូវកម្លាំងនាយកដ្ឋាននគរបាលព្រហ្មទណ្ឌ បង្ក្រាបបាននៅថ្ងៃទី២៣ ខែមីនា ឆ្នាំ២០២៣",
       'imagePost':
           'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzHQv_th9wq3ivQ1CVk7UZRxhbPq64oQrg5Q&usqp=CAU'
     },
@@ -153,10 +153,8 @@ class CardFeedReusable extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Text(
-              text,
-              style: TextStyle(fontSize: 15),
-            ),
+            child: Text(text,
+                style: TextStyle(fontSize: 15, fontFamily: 'Battambang')),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 10),
